@@ -1,1 +1,201 @@
-<p>signin-signup works!</p>
+<!-- <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Angular register reactive form</h3>
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" formControlName="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Mobile Number</label>
+                        <input type="text" class="form-control" formControlName="mobNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Enter your Age</label>
+                        <input type="number" class="form-control" formControlName="age" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">DOB</label>
+                        <input type="date" class="form-control" formControlName="dob" />
+                    </div>
+                </form>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="example@gmail.com"
+                            formControlName="email" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="password" formControlName="password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Address</label>
+                        <input type="text" class="form-control" placeholder="address 1" formControlName="addline1" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="address">Address 2</label>
+                        <input type="text" class="form-control" placeholder="address 2" formControlName="addline2" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="address">Address 2</label>
+                        <input type="text" class="form-control" placeholder="address 2" formControlName="addline2" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <!-- ===================== REGISTER FORM ===================== -->
+            <div class="col-md-6 offset-md-3" *ngIf="regForm; else loginTemplate">
+                <h3 class="mb-4 text-center">Angular Register Reactive Form</h3>
+
+                <!-- ✅ Bind FormGroup and Submit -->
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                    <!-- Basic Info -->
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="name" />
+                        <small *ngIf="signUpsubmitted && rf['name'].errors" class="text-danger">Name is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="text" class="form-control" formControlName="mobNumber" />
+                        <small *ngIf="signUpsubmitted && rf['mobNumber'].errors" class="text-danger">Mobile number is
+                            required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" class="form-control" formControlName="age" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>DOB</label>
+                        <input type="date" class="form-control" formControlName="dob" />
+                    </div>
+
+                    <!-- Email & Password -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input type="email" class="form-control" formControlName="email" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password" />
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div formGroupName="address">
+                        <input type="text" class="form-control" formControlName="addline1"
+                            placeholder="Address Line 1" />
+                        <input type="text" class="form-control" formControlName="addline2"
+                            placeholder="Address Line 2" />
+                        <input type="text" class="form-control" formControlName="city" placeholder="City" />
+                        <input type="text" class="form-control" formControlName="state" placeholder="State" />
+                        <input type="text" class="form-control" formControlName="zipCode" placeholder="ZipCode" />
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="form-check">
+                            <input type="radio" id="male" value="Male" formControlName="gender"
+                                class="form-check-input" />
+                            <label for="male" class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="female" value="Female" formControlName="gender"
+                                class="form-check-input" />
+                            <label for="female" class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="other" value="Other" formControlName="gender"
+                                class="form-check-input" />
+                            <label for="other" class="form-check-label">Other</label>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="form-group">
+                        <label>Languages Known</label>
+                        <select class="form-control" formControlName="languages" multiple>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Tamil">Tamil</option>
+                        </select>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-control" formControlName="role">
+                            <option value="">Select Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Customer">Customer</option>
+                            <option value="Seller">Seller</option>
+                            <option value="Buyer">Buyer</option>
+                        </select>
+                    </div>
+
+                    <!-- About -->
+                    <div class="form-group">
+                        <label>About You</label>
+                        <textarea class="form-control" rows="3" formControlName="aboutyou"></textarea>
+                    </div>
+
+                    <!-- Upload -->
+                    <div class="form-group">
+                        <label>Upload Photo</label>
+                        <input type="file" class="form-control-file" (change)="onFileSelected($event)" />
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" formControlName="agreetc" />
+                        <label class="form-check-label">I agree to the terms and conditions</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Register</button>
+                    <p class="sim-pointer mt-3 text-center" routerLink="/sign-in">Already have an account?</p>
+                </form>
+            </div>
+
+            <!-- ===================== LOGIN FORM ===================== -->
+            <ng-template #loginTemplate>
+                <div class="col-md-6 offset-md-3">
+                    <h3 class="mb-4 text-center">Login Form (Template Driven)</h3>
+                    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="userEmail" ngModel class="form-control" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" ngModel class="form-control" required />
+                        </div>
+
+                        <button class="btn btn-primary btn-block mt-3" type="submit">Login</button>
+                        <p class="sim-pointer mt-3 text-center" routerLink="/sign-up">Don't have an account?</p>
+                    </form>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
