@@ -47,7 +47,7 @@
       "gender": "Female",
       "aboutyou": "UI/UX designer who loves creating clean and user-friendly interfaces.",
       "uploadPhoto": "https://randomuser.me/api/portraits/women/2.jpg",
-      "role": "Customer",
+      "role": "buyer",
       "agree": true
     },
     {
@@ -77,103 +77,13 @@
       "agree": false
     },
     {
-      "id": "14bf",
+      "id": "1ec3",
       "name": "Anurag Jha",
       "mobNumber": "9304171009",
-      "age": 26,
-      "dob": "2025-10-04",
-      "email": "2025-10-04",
-      "password": "2025-10-04",
-      "address": {
-        "id": 0,
-        "addline1": "opp-d-mart",
-        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
-        "city": "Bokaro",
-        "state": "JHARKHAND"
-      },
-      "languages": "",
-      "gender": "Male",
-      "aboutyou": "hello",
-      "uploadPhoto": null,
-      "agree": true,
-      "role": "Admin"
-    },
-    {
-      "id": "8c69",
-      "name": "Anurag Jha",
-      "mobNumber": "9304171009",
-      "age": 27,
-      "dob": "2025-10-10",
-      "email": "2025-10-10",
-      "password": "2025-10-10",
-      "address": {
-        "id": 0,
-        "addline1": "opp-d-mart",
-        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
-        "city": "Bokaro",
-        "state": "JHARKHAND",
-        "zipcode": "827013"
-      },
-      "languages": "",
-      "gender": "Male",
-      "aboutyou": "hello",
-      "uploadPhoto": null,
-      "agree": true,
-      "role": "Admin"
-    },
-    {
-      "id": "b1f0",
-      "name": "Anurag Jha",
-      "mobNumber": "9304171009",
-      "age": 35,
-      "dob": "2025-10-09",
-      "email": "2025-10-09",
-      "password": "2025-10-09",
-      "address": {
-        "id": 0,
-        "addline1": "opp-d-mart",
-        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
-        "city": "Bokaro",
-        "state": "JHARKHAND",
-        "zipcode": "827013"
-      },
-      "gender": "Male",
-      "aboutyou": "hello",
-      "uploadPhoto": null,
-      "agree": true,
-      "role": "Admin"
-    },
-    {
-      "id": "61de",
-      "name": "Anurag Jha",
-      "mobNumber": "9304171009",
-      "age": 45,
-      "dob": "2025-10-05",
-      "email": "2025-10-05",
-      "password": "2025-10-05",
-      "address": {
-        "id": 0,
-        "addline1": "opp-d-mart",
-        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
-        "city": "Bokaro",
-        "state": "JHARKHAND",
-        "zipcode": "827013"
-      },
-      "languages": true,
-      "gender": "Male",
-      "aboutyou": "hello",
-      "uploadPhoto": null,
-      "agree": true,
-      "role": "Admin"
-    },
-    {
-      "id": "c6bb",
-      "name": "Anurag Jha",
-      "mobNumber": "9304171009",
-      "age": 34,
-      "dob": "2025-10-05",
-      "email": "2025-10-05",
-      "password": "2025-10-05",
+      "age": 67,
+      "dob": "2025-10-03",
+      "email": "hrushikesh.gawade@mazak.in",
+      "password": "@Mazak1131",
       "address": {
         "id": 0,
         "addline1": "opp-d-mart",
@@ -189,7 +99,32 @@
       "aboutyou": "hello",
       "uploadPhoto": null,
       "agree": true,
-      "role": "Admin"
+      "role": "seller"
+    },
+    {
+      "id": "74d3",
+      "name": "anurag singh",
+      "mobNumber": "1234567898",
+      "age": 29,
+      "dob": "2025-10-04",
+      "email": "anurag.jha@mazak.in",
+      "password": "@Mazak1131",
+      "address": {
+        "id": 0,
+        "addline1": "opp-d-mart",
+        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
+        "city": "Bokaro",
+        "state": "JHARKHAND",
+        "zipcode": "827013"
+      },
+      "languages": [
+        "Marathi"
+      ],
+      "gender": "Male",
+      "aboutyou": "hello i am a seller",
+      "uploadPhoto": null,
+      "agree": true,
+      "role": "Buyer"
     }
   ],
   "products": [

@@ -14,7 +14,7 @@ export class LoginSignup {
   private apiService = inject(Api)
 
   authLogin(User_name:any, password:any):Observable<any>{
-    return this.apiService.get(this.login_url+'/user?email='+User_name+'&password='+password);
+    return this.apiService.get(this.login_url+'/users?email='+User_name+'&password='+password);
   }
 
   userRegister(user:any):Observable<any>{
@@ -22,6 +22,6 @@ export class LoginSignup {
   }
 
   adminLogin(User_name:any, password:any):Observable<any>{
-    return this.apiService.get(this.login_url+'/user?email='+User_name+'&password='+password+ '$role=admin');
+    return this.apiService.get(this.login_url+'/users?email='+User_name+'&password='+password+ '$role=admin');
   }
 }
