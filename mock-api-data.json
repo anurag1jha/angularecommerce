@@ -125,6 +125,31 @@
       "uploadPhoto": null,
       "agree": true,
       "role": "Buyer"
+    },
+    {
+      "id": "c6ee",
+      "name": "mrinal",
+      "mobNumber": "2345678",
+      "age": 45,
+      "dob": "2025-10-04",
+      "email": "mrinal@mazak.in",
+      "password": "@Mazak1131",
+      "address": {
+        "id": 0,
+        "addline1": "opp-d-mart",
+        "addline2": "Near Nagarpalika market, Jodhadih More Chas",
+        "city": "Bokaro",
+        "state": "JHARKHAND",
+        "zipcode": "827013"
+      },
+      "languages": [
+        "Bengali"
+      ],
+      "gender": "Male",
+      "aboutyou": "hello,i am admin",
+      "uploadPhoto": null,
+      "agree": true,
+      "role": "admin"
     }
   ],
   "products": [
