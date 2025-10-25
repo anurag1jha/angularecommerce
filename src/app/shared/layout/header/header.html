@@ -6,7 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <li class="nav-item dropdown">
+         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Language
           </a>
@@ -14,29 +14,29 @@
             <li><a class="dropdown-item" href="#">ENG</a></li>
             <li><a class="dropdown-item" href="#">Hindi</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#"  aria-disabled="true">About-us</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/my-order">Order B</a>
+         <li class="nav-item" *ngIf="user_role == 'buyer'">
+          <a class="nav-link" routerLink="/my-order">Order</a>
         </li>
-         <li class="nav-item">
+         <li class="nav-item" *ngIf="user_role == 'admin'">
           <a class="nav-link" routerLink="/all-order">All Order A</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="seller/product">Product S</a>
+         <li class="nav-item" *ngIf="user_role == 'seller'">
+          <a class="nav-link" routerLink="seller/product">Product</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/product">All Product A</a>
+         <li class="nav-item" *ngIf="user_role == 'admin'">
+          <a class="nav-link" routerLink="/admin/product">All Product</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" routerLink="admin/user">User A</a>
+         <li class="nav-item" *ngIf="user_role == 'admin'">
+          <a class="nav-link" routerLink="admin/user">User</a>
         </li>
-         <li class="nav-item">
+         <li class="nav-item" >
           <a class="nav-link" routerLink="contact-us">Contact Us</a>
         </li>
         
@@ -46,8 +46,8 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+      <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
+        <li class="nav-item" >
             <a class="nav-link" routerLink="/sign-in">Sign In</a>
         </li>
         <li class="nav-item">
@@ -55,11 +55,11 @@
         </li>
       </ul>
        <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="logged_in">
             <a class="nav-link" routerLink="/my-profile">My Profile</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/sign-up">Log Out</a>
+        <li class="nav-item"*ngIf="logged_in">
+            <a class="nav-link" routerLink="/sign-up" (click)="logout()">Log Out</a>
         </li>
       </ul>
     </div>
